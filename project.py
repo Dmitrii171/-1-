@@ -39,7 +39,28 @@ class PriceMachine():
         self.sorted_all_data = self.df_all_data.sort_values('цена за кг')
 
     def export_to_html(self, file, data):
+        file.write("""<!doctype html>
+
+            <html lang="ru">
+
+            <head>
+
+              <meta charset="utf-8" />
+
+              <title></title>
+
+            </head>
+
+            <body>""")
+
         data.to_html(file)
+        file.write("""
+
+            </body>
+
+            </html>""")
+
+
 
     def find_text(self, text):
         finded_goods = []
