@@ -28,4 +28,4 @@ def create_and_save_plot(data, ticker, period, filename=None):
         filename = f"{ticker}_{period}_stock_price_chart.png"
 
     plt.savefig(filename)
-    print(f"График сохранен как {filename}")
+    print(f"\u001b[0mГрафик сохранен как {filename}")
