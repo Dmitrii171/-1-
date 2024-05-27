@@ -2,6 +2,7 @@ import matplotlib.pyplot as plt
 import pandas as pd
 
 
+
 def create_and_save_plot(data, ticker, period, filename=None):
     plt.figure(figsize=(10, 6))
 
@@ -10,6 +11,7 @@ def create_and_save_plot(data, ticker, period, filename=None):
             dates = data.index.to_numpy()
             plt.plot(dates, data['Close'].values, label='Close Price')
             plt.plot(dates, data['Moving_Average'].values, label='Moving Average')
+            # plt.plot(dates, data['RSI'].values, label='RSI')
         else:
             print("Информация о дате отсутствует или не имеет распознаваемого формата.")
             return

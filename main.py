@@ -22,8 +22,17 @@ def main():
 
     dd.notify_if_strong_fluctuations(stock_data, threshold)
 
+    # dd.rsi(stock_data)
+
+    # Data to CSV
+    dd.export_data_to_csv(stock_data, 'csv_data')
+
     # Plot the data
     dplt.create_and_save_plot(stock_data, ticker, period)
+
+
+
+
 
 
 
