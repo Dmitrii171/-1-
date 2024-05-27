@@ -17,12 +17,13 @@ def main():
     # Add moving average to the data
     stock_data = dd.add_moving_average(stock_data)
 
+    # Calculate and display RSI
+    stock_data = dd.rsi(stock_data)
+
     # Calculate and display average_price
     dd.calculate_and_display_average_price(stock_data)
 
     dd.notify_if_strong_fluctuations(stock_data, threshold)
-
-    # dd.rsi(stock_data)
 
     # Data to CSV
     dd.export_data_to_csv(stock_data, 'csv_data')
