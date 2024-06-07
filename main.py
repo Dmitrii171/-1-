@@ -6,6 +6,8 @@ def main():
     print("Добро пожаловать в инструмент получения и построения графиков биржевых данных.")
     print("Вот несколько примеров биржевых тикеров, которые вы можете рассмотреть: AAPL (Apple Inc), GOOGL (Alphabet Inc), MSFT (Microsoft Corporation), AMZN (Amazon.com Inc), TSLA (Tesla Inc).")
     print("Общие периоды времени для данных о запасах включают: 1д, 5д, 1мес, 3мес, 6мес, 1г, 2г, 5г, 10л, с начала года, макс.")
+    graph_style = input("Введите название стиля графика (например ,«ggplot», «Solarize_Light2», «dark_background»"
+                        " или введите «default» для стандартного вида графика: ")
     ticker = input("Введите тикер акции (например, «AAPL» для Apple Inc): »")
     period = input("Введите период для данных (например, '1mo' для одного месяца) или введите 'enter', если хотите выбрать конкретные промежутки: ")
     start_date = None
@@ -35,7 +37,7 @@ def main():
     dd.export_data_to_csv(stock_data, 'csv_data')
 
     # Plot the data
-    dplt.create_and_save_plot(stock_data, ticker, period)
+    dplt.create_and_save_plot(graph_style, stock_data, ticker, period)
 
 
 
